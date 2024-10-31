@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+    <script>
+      window.onload = function() {
+        /* @@@SOS@@@ */
+        let label = document.createElement('label');
+        label.textContent = 'Hello World!';
+        window.document.body.appendChild(label);
+        window.max.bindInlet('execute', function() {
+          window.max.outlet(42);
+        });
+        widow.max.outlet('ready');
+        /* @@@EOS@@@ */
+      }
+    </script>
+  </body>
+</html>
