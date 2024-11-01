@@ -237,8 +237,8 @@ Also, see details in [Memorandum of M4L development for MIDI Tools](https://gith
 ## Meanwhile, Max 9 has arrived...
 
 Max 9 introduced [`v8`](https://docs.cycling74.com/userguide/new_in_max9/#javascript-and-coding) object which can run modern ECMAscript.<br>
-You may be able to write ECMAscript directly with linter.<br>
-This means you can inject it into `jweb` without intermediate templates like below.
+You may write directly ECMAscript with linter.<br>
+This means you can inject it into `jweb` without intermediate templates as follows.
 ``` javascript
 // this code is not confirmed to work
 autowatch = 1;
