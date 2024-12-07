@@ -104,7 +104,7 @@ Copy the HTML file or just copy and paste from below.
         /* @@@EOS@@@ */
       }
     </script>
-  <body>
+  </body>
 </html>
 ```
 
