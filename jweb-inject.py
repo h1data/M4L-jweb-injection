@@ -35,6 +35,7 @@ def generate_injection(input_file : str, output_file : str) -> int:
         is_write = False
         is_first = True
         for line in file:
+            line = line.replace('\\', '\\\\')
             if '@@@SOS@@@' in line:
                 is_write = True
                 output = open(output_file, mode = 'w', encoding='UTF-8')
@@ -52,8 +53,6 @@ def generate_injection(input_file : str, output_file : str) -> int:
                 output.write(LINE_HEADER + line.strip() + LINE_FOOTER)
         if is_write:
             output.close
-            
-    
     return -1
 
 def main() -> int:
