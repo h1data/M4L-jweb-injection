@@ -6,7 +6,14 @@
     <script>
       window.onload = function() {
         /* @@@SOS@@@ */
-        let label = document.createElement('label');
+        const style = document.createElement('style');
+        style.textContent =
+`body {
+  font-family: Arial;
+}
+`;
+        document.head.append(style);
+        const label = document.createElement('label');
         label.textContent = 'Hello World!';
         window.document.body.appendChild(label);
         window.max.bindInlet('execute', function() {

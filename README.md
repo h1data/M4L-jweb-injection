@@ -125,9 +125,20 @@ You can only write ECMAScript between indicators `@@@SOS@@@` and `@@@EOS@@@` and
 To display elements like text or input boxes, you have to write codes in WebAPI.
 
 ``` javascript
-  let label = document.createElement('label');
+  const label = document.createElement('label');
   label.textContent = 'Hello World!';
   window.document.body.appendChild(label);
+```
+
+You can declare css like as follows.
+``` javascript
+  const style = document.createElement('style');
+  style.textContent =
+`body {
+  font-family: Arial;
+}
+`;
+  document.head.append(style);  
 ```
 
 Also, you need to add handler functions for inlets of `jweb` object.
@@ -138,13 +149,15 @@ Also, you need to add handler functions for inlets of `jweb` object.
 ```
 
 It is good to output a message at the end of the script to indicate if the injection succeeded.<br>
-``` html
+``` javascript
   <script>
-    /* @@@SOS@@@ */
-    // ...
-    // jweb outputs 'ready' message when injection succeeded.
-    window.max.outlet('ready');
-    /* @@@EOS@@@ */
+    window.onload = function() {
+      /* @@@SOS@@@ */
+      // ...
+      // jweb outputs 'ready' message when injection succeeded.
+      window.max.outlet('ready');
+      /* @@@EOS@@@ */
+    }
   </script>
 ```
 It can trigger initializations in your patch such as sending `hidden 0` message showing `jweb` itself.
