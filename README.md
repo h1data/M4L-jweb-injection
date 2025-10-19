@@ -106,7 +106,9 @@ Copy the HTML file or just copy and paste from below.
 </html>
 ```
 
-Do not remove the comments `/* @@@SOS@@@ */` and `/* @@@EOS@@@ */`. Those indicate the start and end of your codes when generating the inject script.<br>
+> [!WARNING]
+> Do not remove the comments `/* @@@SOS@@@ */` and `/* @@@EOS@@@ */`.<br>
+> Those markers indicate the start and end of your codes when generating the inject script.
 
 ### 3. Prepare the Max Patch
 
