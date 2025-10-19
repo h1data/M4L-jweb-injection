@@ -6,11 +6,9 @@ An experimentation to use `jweb` object for developing Max for Live devices.
 
 ## Motivation
 
-`jweb` object is an option for modern ECMAScript (JavaScript) in Cycling '74 Max before 9.
+`jweb` object is an option for modern ECMAScript (JavaScript) in Cycling '74 Max before 9[^1].
 Also, `jweb` can be used to create UI with various APIs.<br>
 However, as the author has researched, HTML files in frozen Max for Live devices cannot be loaded into `jweb`.
-
-[Node for Max](https://docs.cycling74.com/max8/vignettes/00_N4M_index) (N4M) is another option, however, there are difficulties in using N4M in Max for Live. It is necessary to execute manually `npm install` to use external modules, it has to be executed only the first time.<br> 
 
 `executejavascript` message is a way to inject some scripts to `jweb`.
 You can handle long injection messages by `js` object as follows.
@@ -114,7 +112,7 @@ Do not remove the comments `/* @@@SOS@@@ */` and `/* @@@EOS@@@ */`. Those indica
 
 Send `readfile [file name]` message to open the template HTML.
 
-If you the HTML template in sample, `ready` message will be output and it can be a trigger to send initialize parameter to `jweb` or disable `hidden` attribute.
+If you use the same HTML template as sample, `ready` message will be sent and it can be a trigger to send initialize parameter to `jweb` or disable `hidden` attribute.
 
 ![The image of the sample Max path for develop](image/develop.png)
 
@@ -239,7 +237,8 @@ Good luck!
 
 ## Notice
 
-* The extracted JavaScript will not be minified.
+* You can use `jweb` object within Max for Live devices since [Live 10.1.2](https://www.ableton.com/release-notes/live-10/#live-1012).
+* The extracted JavaScript won't be minified.
 * You must use single quot `'` for string literals in your HTML template. `jweb-inject.py` uses double quot `"` to inject scripts.
 * As far as the author knows, there are no way to `import` other JavaScript in frozen M4L into the script in `jweb`.<br>
 You can import modules from the Web like CDN, but be aware if your M4L device will always be used with the Internet and the license of external modules, off course.
@@ -274,3 +273,8 @@ function inject() {
 }
 ```
 It is not confirmed if Max 9 could handle HTML files in freezed M4L devices.
+
+Also, [`jweb~`](https://docs.cycling74.com/reference/jweb~/) object was introduced in Max 9, which has jweb with audio outputs.
+
+[^1]: [Node for Max](https://docs.cycling74.com/max8/vignettes/00_N4M_index) (N4M) is another option, however, there are difficulties in using N4M in Max for Live.<br>
+It is necessary to execute manually `npm install` to use external modules, it has to be executed only the first time.<br>
