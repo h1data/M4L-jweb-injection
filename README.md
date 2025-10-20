@@ -252,7 +252,7 @@ Also, see details in [Memorandum of M4L development for MIDI Tools](https://gith
 
 Max 9 introduced [`v8`](https://docs.cycling74.com/userguide/new_in_max9/#javascript-and-coding) object which can run modern ECMAscript.<br>
 You may write directly ECMAscript with linter.<br>
-This means you can inject it into `jweb` without intermediate templates as follows.
+This means you can inject it into `jweb` without intermediate templates as follows. (NOTICE: *untested*)
 ``` javascript
 // this code is not confirmed to work
 autowatch = 1;
@@ -274,7 +274,8 @@ function inject() {
   outlet(0, 'executejavascript', targetFunction.toString());
 }
 ```
-It is not confirmed if Max 9 could handle HTML files in freezed M4L devices.
+~~It is not confirmed if Max 9 could handle HTML files in freezed M4L devices.~~<br>
+[update] Confirmed that HTML files in a frozen device cannot be read even by Max 9.
 
 Also, [`jweb~`](https://docs.cycling74.com/reference/jweb~/) object was introduced in Max 9, which has jweb with audio outputs.
 
